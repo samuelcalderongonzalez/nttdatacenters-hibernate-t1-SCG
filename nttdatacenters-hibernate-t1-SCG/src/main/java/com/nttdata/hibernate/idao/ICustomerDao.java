@@ -16,4 +16,7 @@ public interface ICustomerDao {
 	public void insertCustomer(Customer customer);
 	public void updateCustomers(Customer customer);
 	public void deleteCustomer(Customer customer);
+	public List<Customer> searchByName(String name);
+	public List<Customer> searchBySurname1(String surname1);
+	public List<Customer> searchBySurname2(String surname2);
 }

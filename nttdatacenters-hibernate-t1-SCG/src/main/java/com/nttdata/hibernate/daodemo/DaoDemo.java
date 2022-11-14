@@ -37,8 +37,17 @@ public class DaoDemo {
 		exampleInsert.setSurname2("examplesurname2_1");
 		exampleInsert.setNif("666777888");
 		
+		Customer exampleInsert2 = new Customer();
+
+		exampleInsert2.setName("examplename2");
+		exampleInsert2.setSurname1("examplesurname1_2");
+		exampleInsert2.setSurname2("examplesurname2_2");
+		exampleInsert2.setNif("666111888");
+		
 		// Test insert
 		dao.insertCustomer(exampleInsert);
+		dao.insertCustomer(exampleInsert2);
+
 
 		Customer exampleUpdate = exampleInsert;
 		exampleUpdate.setNif("999999999");
@@ -52,11 +61,15 @@ public class DaoDemo {
 		// Test getAllCustomers
 		System.out.println(dao.getAllCustomers());
 		
+		System.out.println(dao.searchByName("examplename1"));
+		System.out.println(dao.searchBySurname1("examplesurname1_1"));
+		System.out.println(dao.searchBySurname2("examplesurname2_1"));
+
 		// Test delete
 		Customer exampleDelete = new Customer();
-		exampleDelete.setName("examplename2");
-		exampleDelete.setSurname1("examplesurname1_2");
-		exampleDelete.setSurname2("examplesurname2_2");
+		exampleDelete.setName("deleteename2");
+		exampleDelete.setSurname1("deletesurname1_2");
+		exampleDelete.setSurname2("deletesurname2_2");
 		exampleDelete.setNif("666777000");
 		dao.insertCustomer(exampleDelete);
 		dao.deleteCustomer(exampleDelete);
